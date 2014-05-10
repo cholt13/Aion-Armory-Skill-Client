@@ -90,7 +90,7 @@ namespace AionArmorySkillClient
 		    {
 			    charClass = Console.ReadLine();
 			    charClass = charClass.ToLower();
-                invalidClass = false;
+				invalidClass = false;
 		
 			    if (charClass == "assassin" || charClass == "sin")
 			    {
@@ -146,26 +146,26 @@ namespace AionArmorySkillClient
 			    }
 			    else
 			    {
-				    invalidClass = true;
+			    	invalidClass = true;
 				    Console.Write("Invalid class entered. Please try again: ");
 			    }
 		    } while (invalidClass);
 		
 		    Console.Write("Enter the character level (9-65) you would like " +
-					    "to check for skills: ");
+						  "to check for skills: ");
 		    string levelInput;
 		
 		    do
 		    {
 			    levelInput = Console.ReadLine();
-                invalidLevel = false;
+				invalidLevel = false;
 			    try
 			    {
 				    charLevel = Convert.ToInt32(levelInput);
 				    if ((charLevel < 9) || (charLevel > 65))
 				    {
 				    	Console.Write("Please enter a level within the range 9-65: ");
-                        invalidLevel = true;
+                                        invalidLevel = true;
 				    }
 			    }
                 catch (Exception exc)
@@ -253,26 +253,26 @@ namespace AionArmorySkillClient
         /// </summary>
         /// <returns>true if skills found, false if not</returns>
         public bool PrintSkillNames()
-	    {
-		    Console.WriteLine(charClass + " skills for level " + 
-				    		  charLevel.ToString() + ":");
-            Console.WriteLine();
+		{
+			Console.WriteLine(charClass + " skills for level " + 
+							  charLevel.ToString() + ":");
+			Console.WriteLine();
 		
-		    if (skillsList.Count == 0)
-		    {
-			    Console.WriteLine("No new skills available.\n");
-			    return false;
-		    }
-		    else
-		    {
-			    for (int i = 0; i < skillsList.Count; ++i)
-			    {
-			    	Console.WriteLine(skillsList[i].Name);
-			    }
-			    Console.WriteLine();
-			    return true;
-		    }
-	    }
+			if (skillsList.Count == 0)
+			{
+				Console.WriteLine("No new skills available.\n");
+				return false;
+			}
+			else
+			{
+				for (int i = 0; i < skillsList.Count; ++i)
+				{
+					Console.WriteLine(skillsList[i].Name);
+				}
+				Console.WriteLine();
+				return true;
+			}
+		}
 
         /// <summary>
         /// Use the skill description links acquired in ExtractSkillData()
@@ -537,7 +537,7 @@ namespace AionArmorySkillClient
                 inputString = inputString.ToLower();
 
                 while (inputString != "y" && inputString != "n" &&
-                           inputString != "yes" && inputString != "no")
+                       inputString != "yes" && inputString != "no")
                 {
                     Console.Write("Invalid choice. Enter Y or N: ");
                     inputString = Console.ReadLine();
